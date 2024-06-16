@@ -1,0 +1,344 @@
+/* IMPORT CUSTOM FONT */
+@import "https://fonts.googleapis.com/css?family=Montserrat:200,700";
+
+/* GENERAL */
+*, html
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Arial';
+	/* Set a clean page, with 0 margins, and 0 padding, 
+	with a global font style of Arial */
+}
+
+body
+{
+	background-color: rgb(15, 20, 54); /* Set page background color */
+	position: relative;
+  	min-height: 100vh; /* Make footer stay at bottom free code camp */
+}
+
+/* IMAGE */
+#film
+{
+	float: right;
+	height: 18rem;
+	width: 24rem;
+	transform: rotate(8deg);
+	margin-left: 0.3rem;
+	margin-right: 2.3rem;
+	margin-top: 9rem;
+	margin-bottom: 2rem;
+}
+
+/* HEADER */
+header
+{
+	background: #101010; /* Set header background color */
+	width: 100%;
+	height: 100%;
+	text-align: center; /* Align all text to the center */
+	/* Set width/height to 100%, so it scales the entire page and container */
+}
+
+.logo
+{
+	padding: 0.9%;
+	padding-bottom: 0.3%;
+	color: rgb(248,232,166);
+	font-family: 'Montserrat';
+	font-size: 3rem;
+	font-weight: 200;
+}
+
+.logo span
+{
+	font-weight: 700;
+}
+
+nav
+{
+	background: #0b0b0b;
+	border-bottom: 0.22rem ridge rgb(248,232,166);
+}
+
+nav ul
+{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+nav li
+{
+	margin-top: 0.7rem;
+	margin-bottom: 0.6rem;
+	margin-left: 0.7rem;
+	margin-right: 0.6rem;
+}
+
+nav a
+{
+	color: rgb(238, 208, 68);
+	text-decoration: none;
+	font-size: 1.2rem;
+	padding: 5px 11px; 
+	border-style: 1px solid;
+	/* Using px here, instead of rem, just to be as accurate as possible,
+	as to not disrupt the other elements of the header */
+}
+
+nav a:hover
+{
+	color: ivory;
+	text-decoration: none;
+	font-size: 1.2rem;
+	cursor: pointer;
+	border:1px solid rgb(238, 90, 22);
+	padding: 5px 10px; 
+	/* Removed padding of 1px width, so other links do not move when hovering */
+}
+
+/* MAIN */
+.main
+{
+	padding: 4rem;
+	padding-top: 1rem;
+	padding-bottom: 7rem; /* Total height of footer plus a little extra*/
+}
+
+p, label, a
+{
+	color: rgb(238, 208, 68);
+}
+
+#subTitle
+{
+	color: rgb(238, 208, 68);
+	font-family: 'Montserrat';
+	font-size: 1.6rem;
+}
+
+#dash
+{
+	color: rgb(238, 208, 68);
+	font-size: 1.4rem;
+}
+
+hr
+{
+	border: 0.07rem dashed rgb(238, 208, 68);
+}
+
+.instruct
+{
+	text-align: justify;
+	text-justify: inter-word;
+	padding-left: 1rem;
+	padding-right: 30rem;
+}
+
+/* HIDE/SHOW */
+.hide
+{
+	display: none; /* Sets the default display to none, so it is hidden when the webpage is refreshed */
+}
+
+/* FORMS */
+.forms
+{
+	padding: 4rem;
+	padding-top: 1rem;
+	padding-bottom: 0rem;
+}
+
+.forms table
+{
+	border: none;
+	text-align: left;
+	padding-left: 1rem;
+}
+
+.forms tr td
+{
+	border: none;
+}
+
+.forms table tr td:last-child 
+{
+	width: 24rem;
+}
+
+.forms tr:hover
+{
+	background-color: transparent;
+}
+
+.forms tr:hover label
+{
+	color: orangered;
+}
+
+.forms input[type=text], .forms input[type=number]
+{
+	width: 100%;
+	padding: 0.35rem 1rem;
+    margin: 0.03rem 0;
+    display: inline-block;
+    border: 1px solid rgb(238, 171, 26);
+    border-radius: 0.25rem;
+	background-color: rgb(245, 245, 200);
+	box-sizing: border-box;
+	/* Add box-sizing: border-box to the input styles. 
+	Otherwise, the width is 100%, PLUS the border and padding. */
+}
+
+.forms input[type=number]
+{
+	padding-right: 0.56rem; 
+	/* Adjusting the right padding of just the number field, so the increment stepper in not too far left */
+}
+
+.forms input[type=text].disabled, .forms input[type=text].read
+{
+	background-color: rgb(164, 164, 165);
+	/* Setting the readonly and disabled forms, to be grayed out */
+}
+
+.forms select
+{
+	width: 100%;
+    padding: 0.287rem 0.75rem;
+    margin: 0.03rem 0;
+    display: inline-block;
+    border: 1px solid rgb(238, 171, 26);
+    border-radius: 0.25rem;
+	background-color: rgb(245, 245, 200);
+	box-sizing: border-box;
+}
+
+.forms input[type=submit]
+{
+	float: right;
+	width: 6rem;
+	text-align: center;
+	padding: 0.32rem;
+    margin: 0 0;
+    border: 1px solid rgb(238, 171, 26);
+	border-radius: 0.25rem;
+	background-color: rgb(250, 250, 160);
+	box-sizing: border-box;
+}
+
+/* TABLE */
+.data
+{
+	padding-left: 1rem;
+}
+
+table, th, td
+{
+	border: 1px solid ivory;
+	color: rgb(246, 237, 151);
+	text-align: left;
+}
+
+th, td
+{
+	padding: 0.25rem;
+}
+
+th
+{
+	background-color: rgb(3, 3, 56);
+	text-align: center;
+	color: ivory;
+}
+
+tr:hover 
+{
+	background-color: rgb(30, 35, 117);
+}
+
+tr:hover td
+{
+	color: ivory;
+}
+
+.View
+{
+	color: rgb(20, 210, 235);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.View:hover
+{
+	color: rgb(177, 82, 27);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Update
+{
+	color: rgb(97, 204, 97);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.Update:hover
+{
+	color: lightgreen;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Delete
+{
+	color: rgb(245, 86, 28);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.Delete:hover
+{
+	color: red;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* FOOTER */
+footer
+{
+	background: #101010;
+	border-top: 0.22rem ridge rgb(248,232,166);
+	width: 100%;
+	height: 4.1rem;
+	text-align: center;
+	padding-top: 0.54rem;
+	padding-bottom: 0.46rem;
+	position: absolute;
+	bottom: 0;
+}
+
+.footerText
+{
+	font-style: oblique;
+	font-size: 1.1rem;
+	color: rgb(248,232,166);
+	background-color: #101010;
+}
+
+.failure
+{
+	color: rgb(238, 208, 68);
+	font-family: 'Arial';
+	font-size: 1.6rem;
+	font-style: italic;
+	padding: 1rem;
+}
+
+.error
+{
+	padding: 2rem;
+}

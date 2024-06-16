@@ -1,0 +1,62 @@
+
+# Drop tables from previous exercises
+
+DROP TABLE IF EXISTS Scene;
+DROP TABLE IF EXISTS Movie;
+DROP TABLE IF EXISTS Actor;
+
+# Create new tables
+
+CREATE TABLE Actor ( 
+actID INT NOT NULL AUTO_INCREMENT, 
+actName VARCHAR(255) NOT NULL,
+CONSTRAINT pk_actor PRIMARY KEY (actID),
+CONSTRAINT ck_actor UNIQUE (actName)
+);
+	
+CREATE TABLE Movie (
+mvID INT NOT NULL AUTO_INCREMENT, 
+actID INT NOT NULL,
+mvTitle VARCHAR(255) NOT NULL,
+mvPrice REAL NOT NULL, 
+mvYear INT NULL,
+mvGenre VARCHAR(255) NULL,
+mvNumScenes INT NULL,
+CONSTRAINT pk_mv PRIMARY KEY (mvID),
+CONSTRAINT fk_mv_act FOREIGN KEY (actID) REFERENCES Actor (actID) 
+);
+
+# Fill the tables up
+
+# Actor
+
+INSERT INTO Actor (actName) 
+VALUES 	('Arethan Franklin'),
+		('Barry Nelson'),
+		('Bullet Prakash'),
+		('Daniel Craig'),
+		('James Bond'),
+       	('Jonny Walker'),
+		('Laura Dern'),
+		('Mr. Ryan Reynolds');
+
+# Movie
+
+INSERT INTO Movie (actID, mvTitle, mvGenre, mvYear, mvPrice) VALUES
+((SELECT actID from Actor WHERE actName = 'Barry Nelson'), 'Die hard with a Vengeance', 'Action',1999,12.24),
+((SELECT actID from Actor WHERE actName = 'Barry Nelson'), 'Black Snake Moan', 'Adventure', 2007, 9.99),
+((SELECT actID from Actor WHERE actName = 'Arethan Franklin'), 'Snake on a Plane', 'Comedy',2011, 9.99),
+((SELECT actID from Actor WHERE actName = 'Bullet Prakash'), 'Freeway of Love', 'Drama', 2018, 9.99),
+((SELECT actID from Actor WHERE actName = 'Daniel Craig'), 'I knew you were waiting for me', 'Comedy', 1997, 12.25),
+((SELECT actID from Actor WHERE actName = 'James Bond'), 'The Black Panther', 'Action', 2018,10.99),
+((SELECT actID from Actor WHERE actName = 'Jonny Walker'), 'The Jungle book', 'Adventure', 2015, 9.99),
+((SELECT actID from Actor WHERE actName = 'Laura Dern'), 'Infinity War', 'Horror', 1975, 8.50),
+((SELECT actID from Actor WHERE actName = 'Laura Dern'), 'Coming to Europe', 'Adventure', 2001, 12.99),
+((SELECT actID from Actor WHERE actName = 'Mr. Ryan Reynolds'), 'The midnight', 'Drama',2019, 10.99);
+
+
+# Check what's inside each table
+
+SELECT * FROM Actor;
+
+SELECT * FROM Movie;
